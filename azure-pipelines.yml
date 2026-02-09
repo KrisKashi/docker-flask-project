@@ -1,5 +1,5 @@
 trigger:
--main 
+- main 
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -9,6 +9,6 @@ steps:
   displayName: 'Docker image builder'
   inputs:
     command: build
-    Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+    dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
     tags: |
         latest 

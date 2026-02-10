@@ -1,17 +1,31 @@
+Docker Flask Project with CI/CD pipeline 
+
 ## What I built
 
-Docker Project that containerizes and runs a python app to host a simple webpage using flask.
+Dockerized container that hosts a webapp using flask, with a CI/CD pipeline using Github actions 
+ 
+ Function : Flask app displays simple website with a print statement to show that its working, when code for this repo is pushed to github the docker image is automatically created.
 
 # Next steps
-- Learn how to use flask to host more complex web pages instead of simple text 
+- Learn how to use flask to host more complex web pages instead of simple text / multi- page websites 
 - Host the flask container on an AWS EC2 instead of locally 
-- Explore how all of this can be automated with a CI/CD pipeline such as Azure DevOps
 
 # Tech Requirements
 
-Docker,Python,Flask 
+Docker,Python,Flask, Github actions  
 
 # What I learned
+
+## Github actions 
+
+- Uses same Yaml file format as Azure devops pipelines 
+
+- Github actions can be used to automate infrastructure by setting a trigger for it to initiate a script 
+
+- Indentation/ formatting is very important when creating pipelines as it needs a clear set of instructions when to do each step 
+
+- Pipeline can be viewed in the actions tab on github 
+
 
 ## Flask 
 
@@ -31,8 +45,20 @@ Docker,Python,Flask
 
 - pip3 install flask - installs the dependency flask 
 
+- GithubActions - actions/checkout@v4 - can be used to read your code so that it can execute commands  
+
 
 # Errors I faced
+
+- Initially tried to use azure services but need to fill out a form to use their devops pipeline
+
+- Pipeline failed : Docker image Build error 
+
+fix: specified a directory in the docker build command which was missing 
+
+- Git merge issue - Local git repo differed from github repo, this is because I tried to use azure and it created files which were not present in my local repo
+
+fix : Pull request from github so they are both the same and merge the data onto the main branch
 
 - Error : Container would not build due to line in code that installs dependencies 'RUN PIP install requirements.txt'
 
